@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
-  before_action :autheticate_user!
-  before_action :confingure_permitted_parameters, if: : device_controller?
+  before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
- private
- def confingure_permitted_parameters
-  device_parameter_sanitizer.permit(:sign_up,keys:[:name])
- end
+  private
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
 end
+
