@@ -10,6 +10,8 @@ module ChatApp2
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    confing.i18n.default_locale = :ja
+    confing.time_zone ='Tokyo'
 
     # Configuration for the application, engines, and railties goes here.
     #
